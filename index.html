@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code 설치 준비</title>
+<meta name="description" content="Python, Node.js, Git, VS Code, Claude Code를 처음부터 설치하는 순서. 윈도우와 맥.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=IBM+Plex+Mono&display=swap">
+<style>
+:root{--bg:#faf9f6;--ink:#172020;--muted:#5d6868;--line:#dfe2df;--card:#fff;--accent:#254ef0;--ok:#1b8a52;--warn:#b5520a;--code:#f1f2ee}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "IBM Plex Sans KR","Malgun Gothic",system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:30px;margin:0 0 6px}.lead{color:var(--muted);margin:0 0 22px}
+.os{display:flex;gap:8px;margin:0 0 22px}.os button{flex:1;padding:14px;border:2px solid var(--line);background:var(--card);border-radius:12px;font-weight:600;font-size:17px;font-family:inherit;cursor:pointer}
+.os button.on{border-color:var(--accent);color:var(--accent)}
+.map{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 26px;padding:0;list-style:none}.map li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;margin:0 0 16px}
+.step h2{margin:0 0 4px;font-size:21px;display:flex;gap:10px;align-items:center}.n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:15px;flex:none}
+.step .sub{color:var(--muted);margin:0 0 12px;font-size:15px}ol{margin:0;padding-left:22px}li{margin:4px 0}
+.note{border-left:4px solid var(--accent);background:#eef1fe;padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0 0;font-size:15px}
+.note.warn{border-color:var(--warn);background:#fbf1e8}.note.ok{border-color:var(--ok);background:#eaf6ef}
+.cmd{display:flex;margin:10px 0;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.cmd code{flex:1;min-width:0;overflow-x:auto;white-space:pre;background:var(--code);padding:11px 14px;font:14px/1.6 "IBM Plex Mono",Consolas,monospace}
+.cmd button{border:0;background:var(--ink);color:#fff;padding:0 16px;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer}
+.reboot{background:var(--ink);color:#fff;border-radius:14px;padding:16px 20px;margin:0 0 16px;font-weight:600}
+.tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}td,th{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--code)}
+[hidden]{display:none!important}a{color:var(--accent)}
+footer{color:var(--muted);font-size:13px;margin-top:30px}
+</style>
+</head>
+<body><div class="wrap">
+<h1>Claude Code 설치 준비</h1>
+<p class="lead">강의 전에 한 번만 하면 됩니다. 순서대로 따라 하면 약 20~30분 걸려요. 관리자 권한이 있는 컴퓨터에서 해 주세요.</p>
+<div class="os"><button data-os="win" class="on">윈도우</button><button data-os="mac">맥</button></div>
+<ul class="map"><li>1 Python</li><li>2 Node.js</li><li>3 Git</li><li>4 VS Code</li><li>5 터미널 열기</li><li>6 Claude Code</li><li>7 설치 확인</li></ul>
+
+<section class="step"><h2><span class="n">1</span>Python</h2><p class="sub">AI가 엑셀, PDF 같은 파일을 다룰 때 쓰는 엔진이에요.</p>
+<div data-for="win"><ol><li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a>에 들어갑니다.</li><li>노란 「Download Python 3.x」 버튼 <b>위에 있는</b> 「Python install manager」 버튼으로 받습니다(.msix 파일).</li><li>받은 파일을 열고 「설치」를 누릅니다.</li><li>검은 창이 뜨며 영어로 [y/N]을 묻습니다. 아래 표대로 답하세요.</li></ol>
+<div class="tbl"><table><tr><th>화면에 나오는 질문</th><th>답</th></tr><tr><td>Open Settings now?</td><td>그냥 Enter</td></tr><tr><td>Update setting now? (긴 파일 경로)</td><td>Y + Enter</td></tr><tr><td>Open Installed apps now?</td><td>그냥 Enter</td></tr><tr><td>Add commands directory to your PATH now?</td><td>Y + Enter</td></tr><tr><td><b>Install CPython now?</b> (파이썬 본체)</td><td><b>Y + Enter</b></td></tr><tr><td>View online help?</td><td>답하지 말고 창 닫기 (설치 끝)</td></tr></table></div>
+<p class="note">질문이 몇 개만 나오거나 아예 안 나와도 정상이에요. 모르면 전부 Y로 답해도 안전해요.</p></div>
+<div data-for="mac" hidden><ol><li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a>에서 노란 「Download Python 3.x」 버튼으로 .pkg를 받습니다.</li><li>받은 파일을 열고 「계속」, 「동의」, 「설치」를 누릅니다.</li><li>끝나고 열리는 폴더에서 「Install Certificates.command」를 더블클릭해 한 번 실행합니다.</li></ol></div>
+<p class="note">설치해도 바탕화면에 아이콘이 생기지 않아요. 정상이에요.</p></section>
+
+<section class="step"><h2><span class="n">2</span>Node.js</h2><p class="sub">Claude Code를 설치하고 돌리는 엔진이에요.</p>
+<ol><li><a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a>에서 초록색 「Get Node.js」를 누릅니다(LTS 버전).</li><li>가운데 나오는 명령어 상자는 건드리지 말고, 아래로 내려 <span data-for="win">「Windows 설치 프로그램 (.msi)」</span><span data-for="mac" hidden>「macOS 설치 프로그램 (.pkg)」</span>을 받습니다.</li><li>받은 파일을 열고 기본값 그대로 「다음」을 눌러 설치합니다. 권한을 물으면 「예」.</li></ol></section>
+
+<section class="step"><h2><span class="n">3</span>Git</h2><p class="sub">작업 기록을 저장하는 도구예요. Claude Code가 안에서 씁니다.</p>
+<div data-for="win"><ol><li><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git-scm.com/download/win</a>에서 「Click here to download」를 누릅니다.</li><li>받은 파일을 열고 옵션은 바꾸지 말고 계속 「Next」, 마지막에 「Install」.</li></ol></div>
+<div data-for="mac" hidden><ol><li>Spotlight(⌘ + 스페이스)에서 「터미널」을 열고 아래를 붙여 넣고 Enter.</li></ol><div class="cmd"><code>xcode-select --install</code><button>복사</button></div><ol start="2"><li>창이 뜨면 「설치」를 누르고 끝날 때까지 기다립니다. 이미 설치돼 있다는 문구가 나오면 그대로 다음으로.</li></ol></div></section>
+
+<div class="reboot" data-for="win">여기서 컴퓨터를 한 번 재부팅하세요. 그래야 1~3번 설치가 완전히 반영돼요.</div>
+
+<section class="step"><h2><span class="n">4</span>VS Code</h2><p class="sub">파일을 보며 AI와 일하는 작업 화면이에요.</p>
+<ol><li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a>에서 받습니다.<span data-for="win"> 버튼이 macOS로 보이면 「other platforms」에서 <b>Windows x64 User Installer</b>를 고르세요.</span></li>
+<li data-for="win">설치 옵션에서 「Code(으)로 열기」 두 개와 「PATH에 추가」가 체크돼 있는지 확인하고 설치합니다.</li>
+<li data-for="mac" hidden>받은 zip을 풀고 나온 Visual Studio Code를 「응용 프로그램」 폴더로 옮깁니다.</li></ol></section>
+
+<section class="step"><h2><span class="n">5</span>터미널 열기</h2><p class="sub">명령어를 붙여 넣는 창이에요.</p>
+<ol data-for="win"><li>Windows 키를 누르고 「PowerShell」을 검색해 「Windows PowerShell」을 엽니다.</li><li>붙여넣기는 Ctrl+V 또는 마우스 오른쪽 클릭이에요.</li></ol>
+<ol data-for="mac" hidden><li>⌘ + 스페이스로 「터미널」을 검색해 엽니다.</li><li>붙여넣기는 ⌘ + V예요.</li></ol></section>
+
+<section class="step"><h2><span class="n">6</span>Claude Code</h2><p class="sub">터미널에 아래를 붙여 넣고 Enter. 1~3분, 길면 더 걸려요. 글자가 흘러가다 입력 줄이 다시 나오면 끝이에요.</p>
+<div class="cmd"><code>npm install -g @anthropic-ai/claude-code</code><button>복사</button></div>
+<div data-for="win"><p class="note warn">「스크립트를 실행할 수 없으므로」(about_Execution_Policies) 오류가 나오면 아래를 붙여 넣고 Enter, 물으면 Y를 누른 뒤 위 명령을 다시 실행하세요. 관리자 권한은 필요 없어요.</p>
+<div class="cmd"><code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code><button>복사</button></div>
+<p class="note">회사 정책으로 막히면 PowerShell 대신 「명령 프롬프트」를 열고 설치 명령만 입력하세요.</p></div>
+<div data-for="mac" hidden><p class="note warn">「EACCES」(권한) 오류가 나오면 앞에 sudo를 붙여 다시 실행하고, 맥 로그인 비밀번호를 입력하세요(입력해도 글자가 안 보이는 게 정상).</p>
+<div class="cmd"><code>sudo npm install -g @anthropic-ai/claude-code</code><button>복사</button></div></div>
+<div class="reboot" style="margin:14px 0 0">설치가 끝나면 터미널을 완전히 닫았다가 다시 여세요.<span data-for="win"> 그래도 claude가 인식되지 않으면 재부팅하세요.</span></div></section>
+
+<section class="step"><h2><span class="n">7</span>설치 확인</h2><p class="sub">새 터미널에서 하나씩 입력해 버전 숫자가 나오면 성공이에요. 숫자는 예시와 달라도 됩니다.</p>
+<div class="cmd" data-for="win"><code>python --version</code><button>복사</button></div>
+<div class="cmd" data-for="mac" hidden><code>python3 --version</code><button>복사</button></div>
+<div class="cmd"><code>node -v</code><button>복사</button></div>
+<div class="cmd"><code>git --version</code><button>복사</button></div>
+<div class="cmd"><code>claude --version</code><button>복사</button></div>
+<p class="note ok">네 개 모두 숫자가 나오면 준비 끝. 강의 당일 터미널에 <b>claude</b>를 입력하고 Claude 계정으로 로그인하면 바로 씁니다.</p></section>
+
+<section class="step"><h2><span class="n">?</span>막힐 때</h2>
+<ol><li><b>「인식되지 않습니다」, 「command not found」</b>: 터미널을 닫고 새로 열기 → 그래도 안 되면 재부팅 → 그래도 안 되면 해당 단계 다시.</li>
+<li><b>관리자 권한이 없어 설치가 막힘</b>: 회사 IT 담당자에게 요청하거나 개인 노트북으로 준비해 주세요.</li>
+<li><b>회사 보안 프로그램이 막음</b>: python.org, nodejs.org, git-scm.com, code.visualstudio.com, npmjs.com, claude.ai 접속이 열려 있어야 해요.</li></ol></section>
+
+<footer>최종 확인 2026-11-02. 각 프로그램 화면은 업데이트로 조금 달라질 수 있어요.</footer>
+</div>
+<script>
+const show=os=>{document.querySelectorAll('.os button').forEach(b=>b.classList.toggle('on',b.dataset.os===os));document.querySelectorAll('[data-for]').forEach(e=>e.hidden=e.dataset.for!==os);try{localStorage.setItem('os',os)}catch(e){}};
+document.querySelectorAll('.os button').forEach(b=>b.onclick=()=>show(b.dataset.os));
+let os=/Mac/.test(navigator.platform)?'mac':'win';try{os=localStorage.getItem('os')||os}catch(e){}
+show(os);
+document.querySelectorAll('.cmd button').forEach(b=>b.onclick=async()=>{const c=b.previousElementSibling;try{await navigator.clipboard.writeText(c.textContent);b.textContent='복사됨'}catch(e){const r=document.createRange();r.selectNodeContents(c);getSelection().removeAllRanges();getSelection().addRange(r);b.textContent='선택됨'}setTimeout(()=>b.textContent='복사',1500)});
+</script>
+</body></html>
